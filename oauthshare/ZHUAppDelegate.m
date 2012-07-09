@@ -8,10 +8,6 @@
 
 #import "ZHUAppDelegate.h"
 
-#import "ZHUFirstViewController.h"
-
-#import "ZHUSecondViewController.h"
-
 @implementation ZHUAppDelegate
 
 @synthesize window = _window;
