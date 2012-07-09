@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD64156015AB0AE700C2D7C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64155F15AB0AE700C2D7C9 /* UIKit.framework */; };
+		DD64156215AB0AE700C2D7C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64156115AB0AE700C2D7C9 /* Foundation.framework */; };
+		DD64156415AB0AE700C2D7C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64156315AB0AE700C2D7C9 /* CoreGraphics.framework */; };
+		DD64156A15AB0AE700C2D7C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD64156815AB0AE700C2D7C9 /* InfoPlist.strings */; };
+		DD64156C15AB0AE700C2D7C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DD64156B15AB0AE700C2D7C9 /* main.m */; };
+		DD64157015AB0AE700C2D7C9 /* ZHUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DD64156F15AB0AE700C2D7C9 /* ZHUAppDelegate.m */; };
+		DD64157315AB0AE700C2D7C9 /* ZHUFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD64157215AB0AE700C2D7C9 /* ZHUFirstViewController.m */; };
+		DD64157515AB0AE700C2D7C9 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = DD64157415AB0AE700C2D7C9 /* first.png */; };
+		DD64157715AB0AE700C2D7C9 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD64157615AB0AE700C2D7C9 /* first@2x.png */; };
+		DD64157A15AB0AE700C2D7C9 /* ZHUSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD64157915AB0AE700C2D7C9 /* ZHUSecondViewController.m */; };
+		DD64157C15AB0AE700C2D7C9 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = DD64157B15AB0AE700C2D7C9 /* second.png */; };
+		DD64157E15AB0AE700C2D7C9 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD64157D15AB0AE700C2D7C9 /* second@2x.png */; };
+		DD64158115AB0AE700C2D7C9 /* ZHUFirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD64157F15AB0AE700C2D7C9 /* ZHUFirstViewController.xib */; };
+		DD64158415AB0AE700C2D7C9 /* ZHUSecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD64158215AB0AE700C2D7C9 /* ZHUSecondViewController.xib */; };
+		DD64158C15AB0AE700C2D7C9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64158B15AB0AE700C2D7C9 /* SenTestingKit.framework */; };
+		DD64158D15AB0AE700C2D7C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64155F15AB0AE700C2D7C9 /* UIKit.framework */; };
+		DD64158E15AB0AE700C2D7C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64156115AB0AE700C2D7C9 /* Foundation.framework */; };
+		DD64159615AB0AE700C2D7C9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD64159415AB0AE700C2D7C9 /* InfoPlist.strings */; };
+		DD64159915AB0AE700C2D7C9 /* oauthshareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD64159815AB0AE700C2D7C9 /* oauthshareTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD64158F15AB0AE700C2D7C9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD64155215AB0AE700C2D7C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD64155A15AB0AE700C2D7C9;
+			remoteInfo = oauthshare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DD64155B15AB0AE700C2D7C9 /* oauthshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oauthshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD64155F15AB0AE700C2D7C9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		DD64156115AB0AE700C2D7C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DD64156315AB0AE700C2D7C9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		DD64156715AB0AE700C2D7C9 /* oauthshare-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "oauthshare-Info.plist"; sourceTree = "<group>"; };
+		DD64156915AB0AE700C2D7C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DD64156B15AB0AE700C2D7C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DD64156D15AB0AE700C2D7C9 /* oauthshare-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "oauthshare-Prefix.pch"; sourceTree = "<group>"; };
+		DD64156E15AB0AE700C2D7C9 /* ZHUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHUAppDelegate.h; sourceTree = "<group>"; };
+		DD64156F15AB0AE700C2D7C9 /* ZHUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHUAppDelegate.m; sourceTree = "<group>"; };
+		DD64157115AB0AE700C2D7C9 /* ZHUFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHUFirstViewController.h; sourceTree = "<group>"; };
+		DD64157215AB0AE700C2D7C9 /* ZHUFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHUFirstViewController.m; sourceTree = "<group>"; };
+		DD64157415AB0AE700C2D7C9 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		DD64157615AB0AE700C2D7C9 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		DD64157815AB0AE700C2D7C9 /* ZHUSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZHUSecondViewController.h; sourceTree = "<group>"; };
+		DD64157915AB0AE700C2D7C9 /* ZHUSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZHUSecondViewController.m; sourceTree = "<group>"; };
+		DD64157B15AB0AE700C2D7C9 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		DD64157D15AB0AE700C2D7C9 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		DD64158015AB0AE700C2D7C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZHUFirstViewController.xib; sourceTree = "<group>"; };
+		DD64158315AB0AE700C2D7C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZHUSecondViewController.xib; sourceTree = "<group>"; };
+		DD64158A15AB0AE700C2D7C9 /* oauthshareTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = oauthshareTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD64158B15AB0AE700C2D7C9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		DD64159315AB0AE700C2D7C9 /* oauthshareTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "oauthshareTests-Info.plist"; sourceTree = "<group>"; };
+		DD64159515AB0AE700C2D7C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DD64159715AB0AE700C2D7C9 /* oauthshareTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = oauthshareTests.h; sourceTree = "<group>"; };
+		DD64159815AB0AE700C2D7C9 /* oauthshareTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = oauthshareTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD64155815AB0AE700C2D7C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD64156015AB0AE700C2D7C9 /* UIKit.framework in Frameworks */,
+				DD64156215AB0AE700C2D7C9 /* Foundation.framework in Frameworks */,
+				DD64156415AB0AE700C2D7C9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD64158615AB0AE700C2D7C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD64158C15AB0AE700C2D7C9 /* SenTestingKit.framework in Frameworks */,
+				DD64158D15AB0AE700C2D7C9 /* UIKit.framework in Frameworks */,
+				DD64158E15AB0AE700C2D7C9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD64155015AB0AE700C2D7C9 = {
+			isa = PBXGroup;
+			children = (
+				DD64156515AB0AE700C2D7C9 /* oauthshare */,
+				DD64159115AB0AE700C2D7C9 /* oauthshareTests */,
+				DD64155E15AB0AE700C2D7C9 /* Frameworks */,
+				DD64155C15AB0AE700C2D7C9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD64155C15AB0AE700C2D7C9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD64155B15AB0AE700C2D7C9 /* oauthshare.app */,
+				DD64158A15AB0AE700C2D7C9 /* oauthshareTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD64155E15AB0AE700C2D7C9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DD64155F15AB0AE700C2D7C9 /* UIKit.framework */,
+				DD64156115AB0AE700C2D7C9 /* Foundation.framework */,
+				DD64156315AB0AE700C2D7C9 /* CoreGraphics.framework */,
+				DD64158B15AB0AE700C2D7C9 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD64156515AB0AE700C2D7C9 /* oauthshare */ = {
+			isa = PBXGroup;
+			children = (
+				DD64156E15AB0AE700C2D7C9 /* ZHUAppDelegate.h */,
+				DD64156F15AB0AE700C2D7C9 /* ZHUAppDelegate.m */,
+				DD64157115AB0AE700C2D7C9 /* ZHUFirstViewController.h */,
+				DD64157215AB0AE700C2D7C9 /* ZHUFirstViewController.m */,
+				DD64157415AB0AE700C2D7C9 /* first.png */,
+				DD64157615AB0AE700C2D7C9 /* first@2x.png */,
+				DD64157815AB0AE700C2D7C9 /* ZHUSecondViewController.h */,
+				DD64157915AB0AE700C2D7C9 /* ZHUSecondViewController.m */,
+				DD64157B15AB0AE700C2D7C9 /* second.png */,
+				DD64157D15AB0AE700C2D7C9 /* second@2x.png */,
+				DD64157F15AB0AE700C2D7C9 /* ZHUFirstViewController.xib */,
+				DD64158215AB0AE700C2D7C9 /* ZHUSecondViewController.xib */,
+				DD64156615AB0AE700C2D7C9 /* Supporting Files */,
+			);
+			path = oauthshare;
+			sourceTree = "<group>";
+		};
+		DD64156615AB0AE700C2D7C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD64156715AB0AE700C2D7C9 /* oauthshare-Info.plist */,
+				DD64156815AB0AE700C2D7C9 /* InfoPlist.strings */,
+				DD64156B15AB0AE700C2D7C9 /* main.m */,
+				DD64156D15AB0AE700C2D7C9 /* oauthshare-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DD64159115AB0AE700C2D7C9 /* oauthshareTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD64159715AB0AE700C2D7C9 /* oauthshareTests.h */,
+				DD64159815AB0AE700C2D7C9 /* oauthshareTests.m */,
+				DD64159215AB0AE700C2D7C9 /* Supporting Files */,
+			);
+			path = oauthshareTests;
+			sourceTree = "<group>";
+		};
+		DD64159215AB0AE700C2D7C9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DD64159315AB0AE700C2D7C9 /* oauthshareTests-Info.plist */,
+				DD64159415AB0AE700C2D7C9 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD64155A15AB0AE700C2D7C9 /* oauthshare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD64159C15AB0AE700C2D7C9 /* Build configuration list for PBXNativeTarget "oauthshare" */;
+			buildPhases = (
+				DD64155715AB0AE700C2D7C9 /* Sources */,
+				DD64155815AB0AE700C2D7C9 /* Frameworks */,
+				DD64155915AB0AE700C2D7C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = oauthshare;
+			productName = oauthshare;
+			productReference = DD64155B15AB0AE700C2D7C9 /* oauthshare.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD64158915AB0AE700C2D7C9 /* oauthshareTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD64159F15AB0AE700C2D7C9 /* Build configuration list for PBXNativeTarget "oauthshareTests" */;
+			buildPhases = (
+				DD64158515AB0AE700C2D7C9 /* Sources */,
+				DD64158615AB0AE700C2D7C9 /* Frameworks */,
+				DD64158715AB0AE700C2D7C9 /* Resources */,
+				DD64158815AB0AE700C2D7C9 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD64159015AB0AE700C2D7C9 /* PBXTargetDependency */,
+			);
+			name = oauthshareTests;
+			productName = oauthshareTests;
+			productReference = DD64158A15AB0AE700C2D7C9 /* oauthshareTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD64155215AB0AE700C2D7C9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZHU;
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = tencent;
+			};
+			buildConfigurationList = DD64155515AB0AE700C2D7C9 /* Build configuration list for PBXProject "oauthshare" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DD64155015AB0AE700C2D7C9;
+			productRefGroup = DD64155C15AB0AE700C2D7C9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD64155A15AB0AE700C2D7C9 /* oauthshare */,
+				DD64158915AB0AE700C2D7C9 /* oauthshareTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD64155915AB0AE700C2D7C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD64156A15AB0AE700C2D7C9 /* InfoPlist.strings in Resources */,
+				DD64157515AB0AE700C2D7C9 /* first.png in Resources */,
+				DD64157715AB0AE700C2D7C9 /* first@2x.png in Resources */,
+				DD64157C15AB0AE700C2D7C9 /* second.png in Resources */,
+				DD64157E15AB0AE700C2D7C9 /* second@2x.png in Resources */,
+				DD64158115AB0AE700C2D7C9 /* ZHUFirstViewController.xib in Resources */,
+				DD64158415AB0AE700C2D7C9 /* ZHUSecondViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD64158715AB0AE700C2D7C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD64159615AB0AE700C2D7C9 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		DD64158815AB0AE700C2D7C9 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD64155715AB0AE700C2D7C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD64156C15AB0AE700C2D7C9 /* main.m in Sources */,
+				DD64157015AB0AE700C2D7C9 /* ZHUAppDelegate.m in Sources */,
+				DD64157315AB0AE700C2D7C9 /* ZHUFirstViewController.m in Sources */,
+				DD64157A15AB0AE700C2D7C9 /* ZHUSecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD64158515AB0AE700C2D7C9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD64159915AB0AE700C2D7C9 /* oauthshareTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD64159015AB0AE700C2D7C9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD64155A15AB0AE700C2D7C9 /* oauthshare */;
+			targetProxy = DD64158F15AB0AE700C2D7C9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD64156815AB0AE700C2D7C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD64156915AB0AE700C2D7C9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DD64157F15AB0AE700C2D7C9 /* ZHUFirstViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD64158015AB0AE700C2D7C9 /* en */,
+			);
+			name = ZHUFirstViewController.xib;
+			sourceTree = "<group>";
+		};
+		DD64158215AB0AE700C2D7C9 /* ZHUSecondViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD64158315AB0AE700C2D7C9 /* en */,
+			);
+			name = ZHUSecondViewController.xib;
+			sourceTree = "<group>";
+		};
+		DD64159415AB0AE700C2D7C9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD64159515AB0AE700C2D7C9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD64159A15AB0AE700C2D7C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DD64159B15AB0AE700C2D7C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD64159D15AB0AE700C2D7C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "oauthshare/oauthshare-Prefix.pch";
+				INFOPLIST_FILE = "oauthshare/oauthshare-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		DD64159E15AB0AE700C2D7C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "oauthshare/oauthshare-Prefix.pch";
+				INFOPLIST_FILE = "oauthshare/oauthshare-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		DD6415A015AB0AE700C2D7C9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/oauthshare.app/oauthshare";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "oauthshare/oauthshare-Prefix.pch";
+				INFOPLIST_FILE = "oauthshareTests/oauthshareTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		DD6415A115AB0AE700C2D7C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/oauthshare.app/oauthshare";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "oauthshare/oauthshare-Prefix.pch";
+				INFOPLIST_FILE = "oauthshareTests/oauthshareTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD64155515AB0AE700C2D7C9 /* Build configuration list for PBXProject "oauthshare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD64159A15AB0AE700C2D7C9 /* Debug */,
+				DD64159B15AB0AE700C2D7C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD64159C15AB0AE700C2D7C9 /* Build configuration list for PBXNativeTarget "oauthshare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD64159D15AB0AE700C2D7C9 /* Debug */,
+				DD64159E15AB0AE700C2D7C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DD64159F15AB0AE700C2D7C9 /* Build configuration list for PBXNativeTarget "oauthshareTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD6415A015AB0AE700C2D7C9 /* Debug */,
+				DD6415A115AB0AE700C2D7C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD64155215AB0AE700C2D7C9 /* Project object */;
+}
