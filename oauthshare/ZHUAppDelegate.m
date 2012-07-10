@@ -7,20 +7,61 @@
 //
 
 #import "ZHUAppDelegate.h"
+#import "ZHUHomeViewController.h"
+@interface ZHUAppDelegate ()
+
+@end
 
 @implementation ZHUAppDelegate
 
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
+- (ZHUTabBarViewController *)tabBarController
+{
+    if (!_tabBarController) {
+        ZHUHomeViewController *viewController1 = [[ZHUHomeViewController alloc] init];
+        ZHUHomeViewController *viewController2 = [[ZHUHomeViewController alloc] init];
+        ZHUHomeViewController *viewController3 = [[ZHUHomeViewController alloc] init];
+        ZHUHomeViewController *viewController4 = [[ZHUHomeViewController alloc] init];
+        
+        UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
+        UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
+        UINavigationController *nav3 = [[UINavigationController alloc] initWithRootViewController:viewController3];
+        UINavigationController *nav4 = [[UINavigationController alloc] initWithRootViewController:viewController4];
+        
+        nav1.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Home", @"Home") 
+                                                        image:[UIImage imageNamed:@"tabbar_home"]
+                                                          tag:0];
+        [nav1.tabBarItem setSelectedImg:[UIImage imageNamed:@"tabbar_home_highlighted"]];
+        
+        
+        nav2.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Discover", @"Discover") 
+                                                        image:[UIImage imageNamed:@"tabbar_discover"]
+                                                          tag:0];
+        [nav2.tabBarItem setSelectedImg:[UIImage imageNamed:@"tabbar_discover_highlighted"]];
+        
+        
+        nav3.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Favorites", @"Favorites") 
+                                                        image:[UIImage imageNamed:@"tabbar_favorites"]
+                                                          tag:0];
+        [nav3.tabBarItem setSelectedImg:[UIImage imageNamed:@"tabbar_favorites_highlighted"]];
+        
+        nav4.tabBarItem = [[UITabBarItem alloc] initWithTitle:NSLocalizedString(@"Message", @"Message") 
+                                                        image:[UIImage imageNamed:@"tabbar_message"]
+                                                          tag:0];
+        [nav4.tabBarItem setSelectedImg:[UIImage imageNamed:@"tabbar_message_highlighted"]];
+        
+        _tabBarController = [[ZHUTabBarViewController alloc] init];
+        _tabBarController.viewControllers = [NSArray arrayWithObjects:nav1, nav2, nav3, nav4, nil];
+    }
+    return _tabBarController;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1 = [[ZHUFirstViewController alloc] initWithNibName:@"ZHUFirstViewController" bundle:nil];
-    UIViewController *viewController2 = [[ZHUSecondViewController alloc] initWithNibName:@"ZHUSecondViewController" bundle:nil];
-    self.tabBarController = [[UITabBarController alloc] init];
-    self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
+
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
     return YES;
