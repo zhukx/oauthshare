@@ -6,11 +6,13 @@
 //  Copyright (c) 2012 tencent. All rights reserved.
 //
 
+#define kTableViewFirstPageNum                  (1)
+#define kTableViewCountPerPage                  (50)
 #import "ZHUTableViewController.h"
+#import "ZHUTableViewCell.h"
 
 @interface ZHUTableViewController ()
-- (void)loadMoreData;
-- (void)refreshData;
+
 @end
 
 @implementation ZHUTableViewController
@@ -24,6 +26,9 @@
         // Custom initialization
         _dataArr = [[NSMutableArray alloc] init];
         _viewSizeType = VIEW_SIZE_WITH_NAVIGATIONBAR;
+        _pageNum = kTableViewFirstPageNum;
+        _countPerPage = kTableViewCountPerPage;
+        _cellClass = [ZHUTableViewCell class];
     }
     return self;
 }
@@ -72,20 +77,12 @@
 
 - (void)loadMoreData 
 {
-    NSLog(@"load more data");
-    int count = _dataArr.count;
-    for (int i = count; i < 20 + count; ++i) {
-        [_dataArr addObject:[NSString stringWithFormat:@"row_%d", i]];
-    }
-//    [self.tableView.infiniteScrollingView stopAnimating];
-    [self.tableView performSelector:@selector(reloadData) withObject:nil afterDelay:2];
+    ++_pageNum;
 }
 
 - (void)refreshData {
-    NSLog(@"refresh dataSource");
     [_dataArr removeAllObjects];
-    [self loadMoreData];
-    [self.tableView.pullToRefreshView performSelector:@selector(stopAnimating) withObject:nil afterDelay:2];
+    _pageNum = kTableViewFirstPageNum;
 }
 
 #pragma mark -
@@ -99,11 +96,27 @@
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[_cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    NSString *content = [_dataArr objectAtIndex:indexPath.row];
-    cell.textLabel.text = content;
+    id content = [_dataArr objectAtIndex:indexPath.row];
+    if ([cell isKindOfClass:[ZHUTableViewCell class]]) {
+        [(ZHUTableViewCell *)cell setCellData:content];
+    }
+    
     return cell;
+}
+
+#pragma mark -
+#pragma mark UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id content = [_dataArr objectAtIndex:indexPath.row];
+    return [_cellClass tableView:tableView rowHeightForContent:content];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
 }
 @end

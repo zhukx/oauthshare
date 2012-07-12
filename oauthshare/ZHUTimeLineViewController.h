@@ -1,5 +1,5 @@
 //
-//  ZHUHomeViewController.h
+//  ZHUTimeLineViewController.h
 //  oauthshare
 //
 //  Created by zhukuanxi@gmail.com on 7/10/12.
@@ -8,6 +8,6 @@
 
 #import "ZHUTableViewController.h"
 
-@interface ZHUHomeViewController : ZHUTableViewController
+@interface ZHUTimeLineViewController : ZHUTableViewController
 
 @end

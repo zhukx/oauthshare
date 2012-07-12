@@ -14,8 +14,13 @@
 
 @interface ZHUTableViewController : ZHUViewController <UITableViewDataSource, UITableViewDelegate>{
     NSMutableArray *_dataArr;
+    NSInteger _pageNum;
+    NSInteger _countPerPage;
+    Class   _cellClass;
 }
 
 @property (strong, nonatomic) UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *dataArr;
+- (void)loadMoreData;
+- (void)refreshData;
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "ZHUAppDelegate.h"
-#import "ZHUHomeViewController.h"
+#import "ZHUTimeLineViewController.h"
 #import "ZHUWebViewController.h"
 
 @interface ZHUAppDelegate ()
@@ -21,7 +21,7 @@
 - (ZHUTabBarViewController *)tabBarController
 {
     if (!_tabBarController) {
-        ZHUHomeViewController *viewController1 = [[ZHUHomeViewController alloc] init];
+        ZHUTimeLineViewController *viewController1 = [[ZHUTimeLineViewController alloc] init];
         ZHUWebViewController *viewController2 = [[ZHUWebViewController alloc] init];
         ZHUTableViewController *viewController3 = [[ZHUTableViewController alloc] init];
         ZHUTableViewController *viewController4 = [[ZHUTableViewController alloc] init];

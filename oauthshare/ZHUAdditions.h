@@ -13,3 +13,20 @@
 - (UIImage *)selectedImg;
 - (void)setSelectedImg:(UIImage *)img;
 @end
+
+@interface NSArray (safeUtil)
+- (id)safeObjectAtIndex:(NSUInteger)index;
+- (NSArray *)uniqueArray;
+@end
+
+@interface NSMutableArray (safeUtil)
+- (void)safeAddObject:(id)object;
+- (void)uniqueAddObject:(id)objcet;
+- (void)safeInsertObject:(id)anObject atIndex:(NSUInteger)index;
+@end
+
+
+@interface NSMutableDictionary (safeUtil)
+- (void)safeSetObject:(id)anObject forKey:(id)aKey;
+- (void)safeSetValue:(id)value forKey:(NSString *)key;
+@end

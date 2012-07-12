@@ -14,4 +14,5 @@
 #define kUserDefaultKeyExpireTime               (@"expireTime")
 
 #define kErrorDomainAuth                        (@"authError")
+
 #endif
