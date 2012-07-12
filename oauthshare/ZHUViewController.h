@@ -1,6 +1,6 @@
 //
 //  ZHUViewController.h
-//  zhuTabbarController
+//  oauthshare
 //
 //  Created by zhukuanxi@gmail.com on 7/10/12.
 //  Copyright (c) 2012 tencent. All rights reserved.
@@ -8,6 +8,7 @@
 
 typedef enum {
     VIEW_SIZE_NORMAL,
+    VIEW_SIZE_FULLSIZE,
     VIEW_SIZE_FULLSCREEN,
     VIEW_SIZE_WITH_TABBAR,
     VIEW_SIZE_WITH_NAVIGATIONBAR,

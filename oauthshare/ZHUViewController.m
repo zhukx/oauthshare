@@ -1,6 +1,6 @@
 //
 //  ZHUViewController.m
-//  zhuTabbarController
+//  oauthshare
 //
 //  Created by zhukuanxi@gmail.com on 7/10/12.
 //  Copyright (c) 2012 tencent. All rights reserved.
@@ -43,6 +43,9 @@
     }
     else if (VIEW_SIZE_WITH_NAVIGATIONBAR == _viewSizeType) {
         frame.size.height -= kDefaultNavbarHeight;
+    }
+    else if (VIEW_SIZE_FULLSIZE == _viewSizeType) {
+        
     }
     self.view.frame = frame;
 }

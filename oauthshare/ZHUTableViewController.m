@@ -23,6 +23,7 @@
     if (self) {
         // Custom initialization
         _dataArr = [[NSMutableArray alloc] init];
+        _viewSizeType = VIEW_SIZE_WITH_NAVIGATIONBAR;
     }
     return self;
 }

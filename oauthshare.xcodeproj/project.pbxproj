@@ -32,6 +32,18 @@
 		DD31726215ABD8DD00160263 /* tb_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = DD31724E15ABD8DD00160263 /* tb_arrow.png */; };
 		DD31726315ABD8DD00160263 /* tb_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DD31724F15ABD8DD00160263 /* tb_arrow@2x.png */; };
 		DD31726515ABDA2C00160263 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD31726415ABDA2C00160263 /* QuartzCore.framework */; };
+		DD4C7C3C15AD1D19006C80C2 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C2A15AD1D19006C80C2 /* NSData+Base64.m */; };
+		DD4C7C3D15AD1D19006C80C2 /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C2C15AD1D19006C80C2 /* NSDate+RFC1123.m */; };
+		DD4C7C3E15AD1D19006C80C2 /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C2E15AD1D19006C80C2 /* NSDictionary+RequestEncoding.m */; };
+		DD4C7C3F15AD1D19006C80C2 /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C3015AD1D19006C80C2 /* NSString+MKNetworkKitAdditions.m */; };
+		DD4C7C4015AD1D19006C80C2 /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C3215AD1D19006C80C2 /* UIAlertView+MKNetworkKitAdditions.m */; };
+		DD4C7C4115AD1D19006C80C2 /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C3415AD1D19006C80C2 /* MKNetworkEngine.m */; };
+		DD4C7C4215AD1D19006C80C2 /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C3715AD1D19006C80C2 /* MKNetworkOperation.m */; };
+		DD4C7C4315AD1D19006C80C2 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C3A15AD1D19006C80C2 /* Reachability.m */; };
+		DD4C7C4615AD1D2F006C80C2 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4C7C4515AD1D2F006C80C2 /* CFNetwork.framework */; };
+		DD4C7C4815AD1D35006C80C2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4C7C4715AD1D35006C80C2 /* SystemConfiguration.framework */; };
+		DD4C7C4A15AD1D3B006C80C2 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD4C7C4915AD1D3B006C80C2 /* Security.framework */; };
+		DD4C7C5515AD4F14006C80C2 /* ZHUWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD4C7C5415AD4F14006C80C2 /* ZHUWebViewController.m */; };
 		DD64156015AB0AE700C2D7C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64155F15AB0AE700C2D7C9 /* UIKit.framework */; };
 		DD64156215AB0AE700C2D7C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64156115AB0AE700C2D7C9 /* Foundation.framework */; };
 		DD64156415AB0AE700C2D7C9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD64156315AB0AE700C2D7C9 /* CoreGraphics.framework */; };
@@ -48,6 +60,11 @@
 		DD6415DE15AB0FAA00C2D7C9 /* ZHUTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6415D815AB0FAA00C2D7C9 /* ZHUTabBar.m */; };
 		DD6415DF15AB0FAA00C2D7C9 /* ZHUTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6415DA15AB0FAA00C2D7C9 /* ZHUTabBarViewController.m */; };
 		DD6415E015AB0FAA00C2D7C9 /* ZHUTabBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6415DC15AB0FAA00C2D7C9 /* ZHUTabBtn.m */; };
+		DD8EC45C15AD6A7A002EE03B /* ZHUWeiboMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EC45B15AD6A7A002EE03B /* ZHUWeiboMgr.m */; };
+		DD8EC46315AD6F30002EE03B /* ZHUOauthWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EC46215AD6F30002EE03B /* ZHUOauthWebViewController.m */; };
+		DD8EC46615AD6FC7002EE03B /* ZHUSinaWeibomgr.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EC46515AD6FC7002EE03B /* ZHUSinaWeibomgr.m */; };
+		DD8EC46B15AD801A002EE03B /* ZHUUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EC46A15AD8019002EE03B /* ZHUUtil.m */; };
+		DD8EC47015ADD0A9002EE03B /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = DD8EC46E15ADD0A9002EE03B /* GTMBase64.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +107,28 @@
 		DD31724E15ABD8DD00160263 /* tb_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tb_arrow.png; sourceTree = "<group>"; };
 		DD31724F15ABD8DD00160263 /* tb_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tb_arrow@2x.png"; sourceTree = "<group>"; };
 		DD31726415ABDA2C00160263 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DD4C7C2915AD1D19006C80C2 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		DD4C7C2A15AD1D19006C80C2 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		DD4C7C2B15AD1D19006C80C2 /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		DD4C7C2C15AD1D19006C80C2 /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		DD4C7C2D15AD1D19006C80C2 /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		DD4C7C2E15AD1D19006C80C2 /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		DD4C7C2F15AD1D19006C80C2 /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		DD4C7C3015AD1D19006C80C2 /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		DD4C7C3115AD1D19006C80C2 /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		DD4C7C3215AD1D19006C80C2 /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		DD4C7C3315AD1D19006C80C2 /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		DD4C7C3415AD1D19006C80C2 /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		DD4C7C3515AD1D19006C80C2 /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		DD4C7C3615AD1D19006C80C2 /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		DD4C7C3715AD1D19006C80C2 /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		DD4C7C3915AD1D19006C80C2 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		DD4C7C3A15AD1D19006C80C2 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		DD4C7C4515AD1D2F006C80C2 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DD4C7C4715AD1D35006C80C2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DD4C7C4915AD1D3B006C80C2 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DD4C7C5315AD4F14006C80C2 /* ZHUWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUWebViewController.h; sourceTree = "<group>"; };
+		DD4C7C5415AD4F14006C80C2 /* ZHUWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUWebViewController.m; sourceTree = "<group>"; };
 		DD64155B15AB0AE700C2D7C9 /* oauthshare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = oauthshare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD64155F15AB0AE700C2D7C9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		DD64156115AB0AE700C2D7C9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -117,6 +156,18 @@
 		DD6415DA15AB0FAA00C2D7C9 /* ZHUTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHUTabBarViewController.m; path = customTabBarController/zhuTabbarController/ZHUTabBarViewController.m; sourceTree = SOURCE_ROOT; };
 		DD6415DB15AB0FAA00C2D7C9 /* ZHUTabBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZHUTabBtn.h; path = customTabBarController/zhuTabbarController/ZHUTabBtn.h; sourceTree = SOURCE_ROOT; };
 		DD6415DC15AB0FAA00C2D7C9 /* ZHUTabBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZHUTabBtn.m; path = customTabBarController/zhuTabbarController/ZHUTabBtn.m; sourceTree = SOURCE_ROOT; };
+		DD8EC45A15AD6A7A002EE03B /* ZHUWeiboMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUWeiboMgr.h; sourceTree = "<group>"; };
+		DD8EC45B15AD6A7A002EE03B /* ZHUWeiboMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUWeiboMgr.m; sourceTree = "<group>"; };
+		DD8EC46115AD6F30002EE03B /* ZHUOauthWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUOauthWebViewController.h; sourceTree = "<group>"; };
+		DD8EC46215AD6F30002EE03B /* ZHUOauthWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUOauthWebViewController.m; sourceTree = "<group>"; };
+		DD8EC46415AD6FC7002EE03B /* ZHUSinaWeibomgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUSinaWeibomgr.h; sourceTree = "<group>"; };
+		DD8EC46515AD6FC7002EE03B /* ZHUSinaWeibomgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUSinaWeibomgr.m; sourceTree = "<group>"; };
+		DD8EC46815AD7694002EE03B /* ZHUWeiboDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUWeiboDef.h; sourceTree = "<group>"; };
+		DD8EC46915AD8019002EE03B /* ZHUUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUUtil.h; sourceTree = "<group>"; };
+		DD8EC46A15AD8019002EE03B /* ZHUUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUUtil.m; sourceTree = "<group>"; };
+		DD8EC46D15ADD0A9002EE03B /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
+		DD8EC46E15ADD0A9002EE03B /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
+		DD8EC46F15ADD0A9002EE03B /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +175,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD4C7C4A15AD1D3B006C80C2 /* Security.framework in Frameworks */,
+				DD4C7C4815AD1D35006C80C2 /* SystemConfiguration.framework in Frameworks */,
+				DD4C7C4615AD1D2F006C80C2 /* CFNetwork.framework in Frameworks */,
 				DD31726515ABDA2C00160263 /* QuartzCore.framework in Frameworks */,
 				DD64156415AB0AE700C2D7C9 /* CoreGraphics.framework in Frameworks */,
 				DD64156015AB0AE700C2D7C9 /* UIKit.framework in Frameworks */,
@@ -157,6 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				DD6415C815AB0F5000C2D7C9 /* ZHUDef.h */,
+				DD8EC46915AD8019002EE03B /* ZHUUtil.h */,
+				DD8EC46A15AD8019002EE03B /* ZHUUtil.m */,
 				DD6415C515AB0F4100C2D7C9 /* ZHUAdditions.h */,
 				DD6415C615AB0F4100C2D7C9 /* ZHUAdditions.m */,
 			);
@@ -198,6 +254,59 @@
 			name = tabbar;
 			sourceTree = "<group>";
 		};
+		DD4C7C2515AD1D19006C80C2 /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				DD4C7C2615AD1D19006C80C2 /* Categories */,
+				DD4C7C3315AD1D19006C80C2 /* MKNetworkEngine.h */,
+				DD4C7C3415AD1D19006C80C2 /* MKNetworkEngine.m */,
+				DD4C7C3515AD1D19006C80C2 /* MKNetworkKit.h */,
+				DD4C7C3615AD1D19006C80C2 /* MKNetworkOperation.h */,
+				DD4C7C3715AD1D19006C80C2 /* MKNetworkOperation.m */,
+				DD4C7C3815AD1D19006C80C2 /* Reachability */,
+			);
+			path = MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		DD4C7C2615AD1D19006C80C2 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				DD4C7C2915AD1D19006C80C2 /* NSData+Base64.h */,
+				DD4C7C2A15AD1D19006C80C2 /* NSData+Base64.m */,
+				DD4C7C2B15AD1D19006C80C2 /* NSDate+RFC1123.h */,
+				DD4C7C2C15AD1D19006C80C2 /* NSDate+RFC1123.m */,
+				DD4C7C2D15AD1D19006C80C2 /* NSDictionary+RequestEncoding.h */,
+				DD4C7C2E15AD1D19006C80C2 /* NSDictionary+RequestEncoding.m */,
+				DD4C7C2F15AD1D19006C80C2 /* NSString+MKNetworkKitAdditions.h */,
+				DD4C7C3015AD1D19006C80C2 /* NSString+MKNetworkKitAdditions.m */,
+				DD4C7C3115AD1D19006C80C2 /* UIAlertView+MKNetworkKitAdditions.h */,
+				DD4C7C3215AD1D19006C80C2 /* UIAlertView+MKNetworkKitAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		DD4C7C3815AD1D19006C80C2 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				DD4C7C3915AD1D19006C80C2 /* Reachability.h */,
+				DD4C7C3A15AD1D19006C80C2 /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		DD4C7C5215AD4ED9006C80C2 /* basic */ = {
+			isa = PBXGroup;
+			children = (
+				DD27D30C15AC229C005B638F /* ZHUViewController.h */,
+				DD27D30D15AC229C005B638F /* ZHUViewController.m */,
+				DD31723115ABCE4E00160263 /* ZHUTableViewController.h */,
+				DD31723215ABCE4E00160263 /* ZHUTableViewController.m */,
+				DD4C7C5315AD4F14006C80C2 /* ZHUWebViewController.h */,
+				DD4C7C5415AD4F14006C80C2 /* ZHUWebViewController.m */,
+			);
+			name = basic;
+			sourceTree = "<group>";
+		};
 		DD64155015AB0AE700C2D7C9 = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +329,9 @@
 		DD64155E15AB0AE700C2D7C9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD4C7C4915AD1D3B006C80C2 /* Security.framework */,
+				DD4C7C4715AD1D35006C80C2 /* SystemConfiguration.framework */,
+				DD4C7C4515AD1D2F006C80C2 /* CFNetwork.framework */,
 				DD31726415ABDA2C00160263 /* QuartzCore.framework */,
 				DD64155F15AB0AE700C2D7C9 /* UIKit.framework */,
 				DD64156115AB0AE700C2D7C9 /* Foundation.framework */,
@@ -232,6 +344,7 @@
 		DD64156515AB0AE700C2D7C9 /* oauthshare */ = {
 			isa = PBXGroup;
 			children = (
+				DD8EC45915AD6A46002EE03B /* weibo */,
 				DD31723915ABD52200160263 /* utility */,
 				DD6415EA15AB110D00C2D7C9 /* viewcontroller */,
 				DD6415E915AB10EA00C2D7C9 /* depend */,
@@ -291,6 +404,8 @@
 		DD6415E915AB10EA00C2D7C9 /* depend */ = {
 			isa = PBXGroup;
 			children = (
+				DD8EC46C15ADD09C002EE03B /* CTMBase64 */,
+				DD4C7C2515AD1D19006C80C2 /* MKNetworkKit */,
 				DD31722C15ABCE2100160263 /* SVPullToRefresh */,
 				DD6415A615AB0CDF00C2D7C9 /* customTabBarController */,
 			);
@@ -300,14 +415,43 @@
 		DD6415EA15AB110D00C2D7C9 /* viewcontroller */ = {
 			isa = PBXGroup;
 			children = (
-				DD27D30C15AC229C005B638F /* ZHUViewController.h */,
-				DD27D30D15AC229C005B638F /* ZHUViewController.m */,
-				DD31723115ABCE4E00160263 /* ZHUTableViewController.h */,
-				DD31723215ABCE4E00160263 /* ZHUTableViewController.m */,
+				DD4C7C5215AD4ED9006C80C2 /* basic */,
 				DD31723615ABD4D500160263 /* ZHUHomeViewController.h */,
 				DD31723715ABD4D500160263 /* ZHUHomeViewController.m */,
 			);
 			name = viewcontroller;
+			sourceTree = "<group>";
+		};
+		DD8EC45915AD6A46002EE03B /* weibo */ = {
+			isa = PBXGroup;
+			children = (
+				DD8EC46715AD6FCD002EE03B /* basic */,
+				DD8EC46415AD6FC7002EE03B /* ZHUSinaWeibomgr.h */,
+				DD8EC46515AD6FC7002EE03B /* ZHUSinaWeibomgr.m */,
+			);
+			name = weibo;
+			sourceTree = "<group>";
+		};
+		DD8EC46715AD6FCD002EE03B /* basic */ = {
+			isa = PBXGroup;
+			children = (
+				DD8EC46815AD7694002EE03B /* ZHUWeiboDef.h */,
+				DD8EC45A15AD6A7A002EE03B /* ZHUWeiboMgr.h */,
+				DD8EC45B15AD6A7A002EE03B /* ZHUWeiboMgr.m */,
+				DD8EC46115AD6F30002EE03B /* ZHUOauthWebViewController.h */,
+				DD8EC46215AD6F30002EE03B /* ZHUOauthWebViewController.m */,
+			);
+			name = basic;
+			sourceTree = "<group>";
+		};
+		DD8EC46C15ADD09C002EE03B /* CTMBase64 */ = {
+			isa = PBXGroup;
+			children = (
+				DD8EC46D15ADD0A9002EE03B /* GTMBase64.h */,
+				DD8EC46E15ADD0A9002EE03B /* GTMBase64.m */,
+				DD8EC46F15ADD0A9002EE03B /* GTMDefines.h */,
+			);
+			name = CTMBase64;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -448,6 +592,20 @@
 				DD31723415ABCE4E00160263 /* ZHUTableViewController.m in Sources */,
 				DD31723815ABD4D500160263 /* ZHUHomeViewController.m in Sources */,
 				DD27D30E15AC229C005B638F /* ZHUViewController.m in Sources */,
+				DD4C7C3C15AD1D19006C80C2 /* NSData+Base64.m in Sources */,
+				DD4C7C3D15AD1D19006C80C2 /* NSDate+RFC1123.m in Sources */,
+				DD4C7C3E15AD1D19006C80C2 /* NSDictionary+RequestEncoding.m in Sources */,
+				DD4C7C3F15AD1D19006C80C2 /* NSString+MKNetworkKitAdditions.m in Sources */,
+				DD4C7C4015AD1D19006C80C2 /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
+				DD4C7C4115AD1D19006C80C2 /* MKNetworkEngine.m in Sources */,
+				DD4C7C4215AD1D19006C80C2 /* MKNetworkOperation.m in Sources */,
+				DD4C7C4315AD1D19006C80C2 /* Reachability.m in Sources */,
+				DD4C7C5515AD4F14006C80C2 /* ZHUWebViewController.m in Sources */,
+				DD8EC45C15AD6A7A002EE03B /* ZHUWeiboMgr.m in Sources */,
+				DD8EC46315AD6F30002EE03B /* ZHUOauthWebViewController.m in Sources */,
+				DD8EC46615AD6FC7002EE03B /* ZHUSinaWeibomgr.m in Sources */,
+				DD8EC46B15AD801A002EE03B /* ZHUUtil.m in Sources */,
+				DD8EC47015ADD0A9002EE03B /* GTMBase64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

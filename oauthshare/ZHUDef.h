@@ -10,6 +10,7 @@
 #define zhukxContact_ZHUDef_h
 
 #import "ZHUAdditions.h"
+#import "ZHUUtil.h"
 
 #define kNofityChangeBadge          (@"changeBadgeString")
 #define kNofityKeyBadgeContrller    (@"badgeController")

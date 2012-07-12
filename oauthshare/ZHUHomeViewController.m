@@ -7,7 +7,7 @@
 //
 
 #import "ZHUHomeViewController.h"
-
+#import "ZHUSinaWeibomgr.h"
 @interface ZHUHomeViewController ()
 - (void)hideTab:(id)sender;
 @end
@@ -33,13 +33,22 @@
                                                                              style:UIBarButtonItemStylePlain 
                                                                             target:self
                                                                             action:@selector(hideTab:)];
-    
 }
 
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void)viewDidAppear:(BOOL)animated 
+{
+    static BOOL bFirst = YES;
+    [super viewDidAppear:animated];
+    if (bFirst) {
+        [[ZHUSinaWeibomgr defaultWiboMgr] logIn];
+    }
+    bFirst = NO;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

@@ -8,6 +8,8 @@
 
 #import "ZHUAppDelegate.h"
 #import "ZHUHomeViewController.h"
+#import "ZHUWebViewController.h"
+
 @interface ZHUAppDelegate ()
 
 @end
@@ -20,9 +22,9 @@
 {
     if (!_tabBarController) {
         ZHUHomeViewController *viewController1 = [[ZHUHomeViewController alloc] init];
-        ZHUHomeViewController *viewController2 = [[ZHUHomeViewController alloc] init];
-        ZHUHomeViewController *viewController3 = [[ZHUHomeViewController alloc] init];
-        ZHUHomeViewController *viewController4 = [[ZHUHomeViewController alloc] init];
+        ZHUWebViewController *viewController2 = [[ZHUWebViewController alloc] init];
+        ZHUTableViewController *viewController3 = [[ZHUTableViewController alloc] init];
+        ZHUTableViewController *viewController4 = [[ZHUTableViewController alloc] init];
         
         UINavigationController *nav1 = [[UINavigationController alloc] initWithRootViewController:viewController1];
         UINavigationController *nav2 = [[UINavigationController alloc] initWithRootViewController:viewController2];
