@@ -9,5 +9,20 @@
 #import "ZHUWBData.h"
 
 @implementation ZHUWBData
++ (NSString *)dataKey
+{
+    return nil;
+}
 
+- (id)initWithDic:(NSDictionary *)dic
+{
+    if (0 >= dic.count) {
+        return nil;
+    }
+    
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
 @end

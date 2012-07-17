@@ -34,35 +34,53 @@
     return self;
 }
 
-- (void)logIn
+- (void)logInWithPresentController:(UIViewController *)presentController
 {
     if ([self isLoggedIn]) {
         return;
     }
     NSString *authorizeUrl = [self createAuthorizeUrl];
-    UIViewController *baseCtl = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIViewController *baseCtl = presentController;
+    if (!baseCtl) {
+        baseCtl = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    }
+
     ZHUOauthWebViewController *webCtl = [[ZHUOauthWebViewController alloc] init];
     webCtl.delegate = self;
     webCtl.url = authorizeUrl;
     [baseCtl presentViewController:webCtl animated:YES completion:^{
         
-    }];
+    }];    
+}
+
+- (void)reLogIn
+{
+    [self logOut];
+    [self logIn];
+}
+
+- (void)logIn
+{
+    [self logInWithPresentController:nil];
 }
 
 - (void)logOut
 {
-    
+    self.accessToken = nil;
+    self.userId = nil;
+    self.expireTime = nil;
+    [self delAuthorizeInUserDefault];
 }
 
 - (BOOL)isLoggedIn
 {  
-    return [self isAuthorizeExpired] && !!_userId && !!_accessToken;    
+    return ![self isAuthorizeExpired] && !!_userId && !!_accessToken;    
 }
 
 - (BOOL)isAuthorizeExpired
 {
     NSDate *expirationDate = [NSDate dateWithTimeIntervalSinceNow:[_expireTime doubleValue]];
-    BOOL isExpire = [expirationDate compare:[NSDate date]];   
+    BOOL isExpire = [expirationDate compare:[NSDate date]] == NSOrderedAscending;   
     return !!expirationDate && isExpire && !!_expireTime;
 }
 
@@ -109,11 +127,12 @@
 #pragma - ZHUOauthWebViewControllerDelegate
 - (void)oauthWeb:(ZHUOauthWebViewController *)webCtl didGetAuthorizeInfo:(NSString *)infoStr
 {
+    [[NSNotificationCenter defaultCenter] postNotificationName:kNofityLoginSucess object:self];
     UIViewController *baseCtl = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     [baseCtl dismissViewControllerAnimated:YES completion:^{
         
     }];
-    NSLog(@"Subclass should implement");
+    DLog(@"Subclass should implement");
 }
 
 - (void)oauthWeb:(ZHUOauthWebViewController *)webCtl didFail:(NSError *)error
@@ -122,6 +141,6 @@
     [baseCtl dismissViewControllerAnimated:YES completion:^{
         
     }];
-    NSLog(@"didFail %@", [error description]);    
+    DLog(@"didFail %@", [error description]);    
 }
 @end

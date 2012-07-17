@@ -8,7 +8,7 @@
 
 #import "ZHUAppDelegate.h"
 #import "ZHUTimeLineViewController.h"
-#import "ZHUWebViewController.h"
+#import "ZHUOauthWebViewController.h"
 
 @interface ZHUAppDelegate ()
 
@@ -22,7 +22,7 @@
 {
     if (!_tabBarController) {
         ZHUTimeLineViewController *viewController1 = [[ZHUTimeLineViewController alloc] init];
-        ZHUWebViewController *viewController2 = [[ZHUWebViewController alloc] init];
+        ZHUOauthWebViewController *viewController2 = [[ZHUOauthWebViewController alloc] init];
         ZHUTableViewController *viewController3 = [[ZHUTableViewController alloc] init];
         ZHUTableViewController *viewController4 = [[ZHUTableViewController alloc] init];
         
@@ -54,6 +54,7 @@
         [nav4.tabBarItem setSelectedImg:[UIImage imageNamed:@"tabbar_message_highlighted"]];
         
         _tabBarController = [[ZHUTabBarViewController alloc] init];
+        _tabBarController.delegate = self;
         _tabBarController.viewControllers = [NSArray arrayWithObjects:nav1, nav2, nav3, nav4, nil];
     }
     return _tabBarController;
@@ -96,12 +97,16 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-/*
+
 // Optional UITabBarControllerDelegate method.
 - (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController
 {
+    if ([viewController.tabBarItem.title isEqualToString:NSLocalizedString(@"Discover", @"Discover")]) {
+//        ZHUOauthWebViewController *webCtl = [[(UINavigationController *)viewController viewControllers] objectAtIndex:0];
+//        [webCtl setUrl:@"https://api.weibo.com/oauth2/authorize?display=mobile&response_type=token&redirect_uri=http%3A%2F%2Fweibo.com%2Fu%2F1800785501%2Fcallback.php&client_id=190838811"];
+    }
 }
-*/
+
 
 /*
 // Optional UITabBarControllerDelegate method.

@@ -15,4 +15,8 @@
 
 #define kErrorDomainAuth                        (@"authError")
 
+#define kWBFalse                                (@"false")
+#define kWBTrue                                 (@"true")
+#define WBBoolValue(__src)               [(__src) isEqualToString:(kWBTrue)]
+
 #endif

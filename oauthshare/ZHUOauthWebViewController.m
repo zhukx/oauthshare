@@ -7,8 +7,7 @@
 //
 
 #import "ZHUOauthWebViewController.h"
-#import "ZHUWeiboDef.h"
-
+#import "ZHUWeiboMgr.h"
 @interface ZHUOauthWebViewController ()
 - (void)getAuthorizeInfo:(NSString *)infoStr;
 @end
@@ -22,6 +21,7 @@
     if (self) {
         // Custom initialization
         _viewSizeType = VIEW_SIZE_FULLSIZE;
+        self.title = NSLocalizedString(@"authWeb", authWeb);
     }
     return self;
 }
@@ -60,9 +60,9 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSString *urlPath = request.URL.absoluteString;
-    NSLog(@"%@", urlPath);
+    DLog(@"%@", urlPath);
     if ([[urlPath getStringWithKey:@"error_code="] isEqualToString:@"21330"]) {
-        NSLog(@"user cancell");
+        DLog(@"user cancell");
         NSError *err = [[NSError alloc] initWithDomain:kErrorDomainAuth code:1 userInfo:nil];
         if (_delegate && [_delegate respondsToSelector:@selector(oauthWeb:didGetAuthorizeInfo:)]) {
             [_delegate oauthWeb:self didFail:err];

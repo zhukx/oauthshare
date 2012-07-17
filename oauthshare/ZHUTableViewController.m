@@ -53,8 +53,6 @@
         [wself loadMoreData];
     }];
     
-    [self.tableView.pullToRefreshView triggerRefresh];
-    
     self.tableView.pullToRefreshView.lastUpdatedDate = [NSDate date];
     
      NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -77,7 +75,7 @@
 
 - (void)loadMoreData 
 {
-    ++_pageNum;
+
 }
 
 - (void)refreshData {
@@ -85,6 +83,24 @@
     _pageNum = kTableViewFirstPageNum;
 }
 
+- (void)configViewFrame
+{
+    CGRect frame = [UIScreen mainScreen].bounds;
+    if (VIEW_SIZE_NORMAL == _viewSizeType || VIEW_SIZE_WITH_TABBAR_NAVIGATIONBAR == _viewSizeType) {
+        frame.size.height -= kDefaultNavbarHeight + kDefaultTabbarHeight + kDefaultStatusbarHeight;
+    }
+    else if (VIEW_SIZE_WITH_TABBAR == _viewSizeType) {
+        frame.size.height -= kDefaultTabbarHeight + kDefaultStatusbarHeight;
+    }
+    else if (VIEW_SIZE_WITH_NAVIGATIONBAR == _viewSizeType) {
+        frame.size.height -= kDefaultNavbarHeight + kDefaultStatusbarHeight;
+    }
+    else if (VIEW_SIZE_FULLSIZE == _viewSizeType) {
+        
+    }
+    self.view.frame = frame;
+    self.tableView.frame = self.view.bounds;
+}
 #pragma mark -
 #pragma mark UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -99,7 +115,7 @@
         cell = [[_cellClass alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
     
-    id content = [_dataArr objectAtIndex:indexPath.row];
+    id content = [_dataArr safeObjectAtIndex:indexPath.row];
     if ([cell isKindOfClass:[ZHUTableViewCell class]]) {
         [(ZHUTableViewCell *)cell setCellData:content];
     }
@@ -111,7 +127,7 @@
 #pragma mark UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id content = [_dataArr objectAtIndex:indexPath.row];
+    id content = [_dataArr safeObjectAtIndex:indexPath.row];
     return [_cellClass tableView:tableView rowHeightForContent:content];
 }
 

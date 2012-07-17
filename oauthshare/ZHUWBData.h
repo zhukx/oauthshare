@@ -7,9 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "ZHUWeiboDef.h"
 @interface ZHUWBData : NSObject {
 
 }
-
++ (NSString *)dataKey;
+- (id)initWithDic:(NSDictionary *)dic;
 @end

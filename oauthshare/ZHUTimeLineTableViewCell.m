@@ -7,12 +7,15 @@
 //
 
 #import "ZHUTimeLineTableViewCell.h"
-#import "ZHUSINAStatuses.h"
+#import "ZHUSinaStatuses.h"
+#import "ZHUSinaUser.h"
 
 @implementation ZHUTimeLineTableViewCell
+
 + (CGFloat)tableView:(UITableView*)tableView rowHeightForContent:(id)object
 {
-    return kDefaultTableCellHeight;
+    CGSize contentSize = [ZHUTimeLineContentView getContentSize:(id)object];
+    return contentSize.height;
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -20,13 +23,14 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+
     }
     return self;
 }
 
 - (void)configCell
 {
-    if (!_cellData || ![_cellData isKindOfClass:[ZHUSINAStatuses class]]) {
+    if (!_cellData || ![_cellData isKindOfClass:[ZHUSinaStatuses class]]) {
         return;
     }
 }

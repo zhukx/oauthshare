@@ -8,6 +8,7 @@
 
 #import "ZHUTableViewCell.h"
 
-@interface ZHUTimeLineTableViewCell : ZHUTableViewCell
+@interface ZHUTimeLineTableViewCell : ZHUTableViewCell {
 
+}
 @end

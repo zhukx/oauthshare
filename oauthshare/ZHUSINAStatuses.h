@@ -1,5 +1,5 @@
 //
-//  ZHUSINAStatuses.h
+//  ZHUSinaStatuses.h
 //  oauthshare
 //
 //  Created by kuanxi zhu on 7/12/12.
@@ -26,33 +26,12 @@
 //geo	object	地理信息字段
 //user	object	微博作者的用户信息字段
 
-
-#define FTL_STATUS                              (@"statuses")
-#define FTL_IDSTR                               (@"idstr")
-#define FTL_CREATEAT                            (@"created_at")
-#define FTL_ID                                  (@"id")
-#define FTL_TEXT                                (@"text")
-#define FTL_SOURCE                              (@"source")
-#define FTL_FAVORITED                           (@"favorited")
-#define FTL_TRUNCATED                           (@"truncated")
-#define FTL_INREPLYTOSTATUSID                   (@"in_reply_to_status_id")
-#define FTL_INREPLYTOUSERID                     (@"in_reply_to_user_id")
-#define FTL_INREPLYTOSCREENNAME                 (@"in_reply_to_screen_name")
-#define FTL_MID                                 (@"mid")
-#define FTL_BMIDDLEPIC                          (@"bmiddle_pic")
-#define FTL_ORIGINALPIC                         (@"original_pic")
-#define FTL_THUMBNAILPIC                        (@"thumbnail_pic")
-#define FTL_REPOSTSCOUNT                        (@"reposts_count")
-#define FTL_COMMENTSCOUNT                       (@"comments_count")
-#define FTL_ANNOTATIONS                         (@"annotations")
-#define FTL_GEO                                 (@"geo")
-#define FTL_USER                                (@"user")
-
-#import "ZHUWBData.h"
-#import "ZHUSinaGeo.h"
+@class ZHUSinaGeo;
+@class ZHUSinaUser;
 #import "ZHUSinaUser.h"
+#import "ZHUWBData.h"
 
-@interface ZHUSINAStatuses : ZHUWBData
+@interface ZHUSinaStatuses : ZHUWBData
 
 @property (strong, nonatomic) NSString *idstr;	//字符串型的微博ID
 @property (strong, nonatomic) NSString *created_at;	//创建时间

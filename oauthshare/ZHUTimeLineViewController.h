@@ -6,8 +6,11 @@
 //  Copyright (c) 2012 tencent. All rights reserved.
 //
 
+@class ZHUWBRequest;
 #import "ZHUTableViewController.h"
 
-@interface ZHUTimeLineViewController : ZHUTableViewController
+@interface ZHUTimeLineViewController : ZHUTableViewController {
+    ZHUWBRequest *_timeLineOp;
+}
 
 @end

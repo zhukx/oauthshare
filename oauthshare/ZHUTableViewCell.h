@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZHUTableContentView.h"
+#import "ZHUTimeLineContentView.h"
 
 @interface ZHUTableViewCell : UITableViewCell {
     id _cellData;
+    ZHUTableContentView *_customContentView;
+    Class _customContentViewClass;
 }
 
 @property (strong, nonatomic) id cellData;

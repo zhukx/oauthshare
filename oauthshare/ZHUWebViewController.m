@@ -26,7 +26,7 @@
     if (self) {
         // Custom initialization
         self.title = NSLocalizedString(@"Web", @"Web");
-        self.viewSizeType = VIEW_SIZE_WITH_NAVIGATIONBAR;
+        _viewSizeType = VIEW_SIZE_WITH_NAVIGATIONBAR;
         _isHideTabBar = YES;
     }
     return self;
@@ -108,7 +108,7 @@
         [self.webView stopLoading];
     }
     else {
-        [self.webView reload];
+        [self startLoadWeb];
     }
 }
 

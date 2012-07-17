@@ -30,3 +30,7 @@
 - (void)safeSetObject:(id)anObject forKey:(id)aKey;
 - (void)safeSetValue:(id)value forKey:(NSString *)key;
 @end
+
+@interface NSString (timeUtil)
+- (NSString *)formatRelativeTime;
+@end

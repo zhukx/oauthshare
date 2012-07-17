@@ -16,6 +16,24 @@
 - (id)initWithURLString:(NSString *)aURLString
                  params:(NSDictionary *)params
              httpMethod:(NSString *)method 
+            requestType:(ZHUWBRequestType)requestType
+            finishBlock:(zhuRequestFinishBlock)finishBlock
+             errorBlock:(zhuRequestErrorBlock)errorBlock 
+{
+    self = [self initWithURLString:aURLString
+                            params:params
+                        httpMethod:method
+                       finishBlock:finishBlock
+                        errorBlock:errorBlock];
+    if (self) {
+        self.requestType = requestType;
+    }
+    return self;
+}
+
+- (id)initWithURLString:(NSString *)aURLString
+                 params:(NSDictionary *)params
+             httpMethod:(NSString *)method 
             finishBlock:(zhuRequestFinishBlock)finishBlock
              errorBlock:(zhuRequestErrorBlock)errorBlock
 {

@@ -21,6 +21,7 @@ typedef enum {
     BOOL _isTabBarSize;
     BOOL _isHideTabBar;
     ZHUViewSizeType _viewSizeType;
+    ZHUViewSizeType _originViewSizeType;
 }
 
 @property (assign, nonatomic) BOOL isTabBarSize;

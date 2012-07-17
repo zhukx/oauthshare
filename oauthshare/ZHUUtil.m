@@ -87,7 +87,7 @@
         if ([obj isKindOfClass:[NSString class]]) {
             NSArray *itemArr = [obj componentsSeparatedByString:@"="];
             if (2 == itemArr.count) {
-                [dic setObject:[itemArr lastObject] forKey:[itemArr objectAtIndex:0]];
+                [dic setObject:[itemArr lastObject] forKey:[itemArr safeObjectAtIndex:0]];
             }
         }
     }];

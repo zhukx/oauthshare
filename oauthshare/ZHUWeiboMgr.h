@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "ZHUWeiboDef.h"
-#import "ZHUUtil.h"
 #import "ZHUOauthWebViewController.h"
 
 //@protocol ZHUWeiboMgrDelegate;
@@ -28,7 +27,9 @@
 
 + (id)defaultWiboMgr;
 - (void)logIn;
+- (void)logInWithPresentController:(UIViewController *)presentController;
 - (void)logOut;
+- (void)reLogIn;
 - (BOOL)isLoggedIn;
 - (BOOL)isAuthorizeExpired;
 - (void)getAuthorizeFromUserDefault;

@@ -29,4 +29,11 @@ typedef enum {
              httpMethod:(NSString *)method 
             finishBlock:(zhuRequestFinishBlock)finishBlock
              errorBlock:(zhuRequestErrorBlock)errorBlock;
+
+- (id)initWithURLString:(NSString *)aURLString
+                 params:(NSDictionary *)params
+             httpMethod:(NSString *)method
+            requestType:(ZHUWBRequestType)requestType
+            finishBlock:(zhuRequestFinishBlock)finishBlock
+             errorBlock:(zhuRequestErrorBlock)errorBlock;
 @end
