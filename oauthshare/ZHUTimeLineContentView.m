@@ -21,6 +21,8 @@
           inLayer:(CALayer *)layer
            inRect:(CGRect)rect
          animated:(BOOL)animated;
+
+- (void)tapInContentView:(UITapGestureRecognizer *)tapGes;
 @end
 
 @implementation ZHUTimeLineContentView
@@ -80,7 +82,6 @@
         CGSize textSize = [user.screen_name sizeWithFont:textFont 
                                        constrainedToSize:maxSize
                                            lineBreakMode:lineMode];
-        offsetX += kTLOffsetBetweenItemH;
         if (nameRect) {
             *nameRect = CGRectMake(offsetX, kTLOffsetFromFrame, textSize.width, textSize.height);
         }
@@ -119,7 +120,7 @@
     if (self) {
         // Initialization code
         _fadeImage = YES;
-        _fadeDuration = 1.0;
+        _fadeDuration = 0.5;
         
         _avatarRect = CGRectMake(kTLOffsetFromFrame, kTLOffsetFromFrame, kTLAvatarWidth, kTLAvatarHeight);
         _avatarLayer = [[CALayer alloc] init];
@@ -128,6 +129,10 @@
         
         _thumbnailLayer = [[CALayer alloc] init];
         [self.layer addSublayer:_thumbnailLayer];
+        
+        UITapGestureRecognizer *ges = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                              action:@selector(tapInContentView:)];
+        [self addGestureRecognizer:ges];
     }
     return self;
 }
@@ -139,7 +144,7 @@
     }
     [CATransaction begin]; 
     [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
-    [self prepareForReuse];
+    //[self prepareForReuse];
     [self calculateRectsForDraw];
     [CATransaction commit];
     
@@ -163,11 +168,17 @@
     ZHUSinaUser *user = status.user;
     if (user) {
         if (user.avatar_large.length) {
-            _avatarOp = [[ZHUWBRequestEngine sharedEngine] imageAtURL:[NSURL URLWithString:user.avatar_large] 
-                                                            onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
-                                                                _avatarImg = fetchedImage;    
-                                                                [self setNeedsDisplayInRect:_avatarRect];
-                                                            }];
+//            _avatarOp = [[ZHUWBRequestEngine sharedEngine] imageAtURL:[NSURL URLWithString:user.avatar_large] 
+//                                                            onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
+//                                                                if (isInCache) {
+//                                                                    ALog(@"from cache");
+//                                                                }
+//                                                                else {
+//                                                                    ALog(@"from server");
+//                                                                }
+//                                                                _avatarImg = fetchedImage;    
+//                                                                [self setNeedsDisplayInRect:_avatarRect];
+//                                                            }];
         }
     }
 }
@@ -177,6 +188,8 @@
 #ifdef USE_ADDSUBVIEW
     _imgView.image = nil;
 #endif
+    _contentData = nil;
+    
     _thumbnailLayer.contents = nil;
     _thumbnailImg = nil;
     [_thumbnailOp cancel];
@@ -186,7 +199,6 @@
     _avatarImg = nil;
     [_avatarOp cancel];
     _avatarOp = nil;
-    
     [self setNeedsDisplay];
 }
 
@@ -224,6 +236,20 @@
                     textRect:&_textRect
                thumbnailRect:&_thumbnailRect];
     _thumbnailLayer.frame = _thumbnailRect;
+}
+
+- (void)tapInContentView:(UITapGestureRecognizer *)tapGes
+{
+    CGPoint touchPt = [tapGes locationInView:self];
+    if (CGRectContainsPoint(_thumbnailRect, touchPt)) {
+        NSLog(@"thumbnail touched");
+    }
+    else if (CGRectContainsPoint(_avatarRect, touchPt)) {
+        NSLog(@"avatar touched");
+    }
+    else {
+        NSLog(@"content touched");
+    }
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -294,7 +320,13 @@
     }
     
     //4.draw avatar
-    [CATransaction begin];
+    if (_avatarImg) {
+        [self drawImage:_avatarImg
+                inLayer:_avatarLayer
+                 inRect:_avatarRect
+               animated:_fadeImage];
+    }
+    
     //5.draw thumbnial
     if (_thumbnailImg) {
         [CATransaction begin]; 
@@ -309,16 +341,6 @@
                  inRect:_thumbnailRect
                animated:_fadeImage];
     }
-    
-    if (_avatarImg) {
-        [self drawImage:_avatarImg
-                inLayer:_avatarLayer
-                 inRect:_avatarRect
-               animated:_fadeImage];
-    }
-    
-
-    [CATransaction commit];
 }
 
 

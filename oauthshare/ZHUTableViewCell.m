@@ -55,6 +55,8 @@
 - (void)prepareForReuse
 {
     [super prepareForReuse];
+    _cellData = nil;
+    [_customContentView prepareForReuse];
 }
 
 - (void)configCell

@@ -18,11 +18,15 @@
     static id _sharedInstance = nil;
     if (!_sharedInstance) {
         _sharedInstance = [[self alloc] init];
-        [_sharedInstance useCache];
+        //[_sharedInstance useCache];
         [_sharedInstance registerOperationSubclass:[MKNetworkOperation class]];
     }
     return _sharedInstance;
 }
+
+//-(int) cacheMemoryCost {
+//    return 500;
+//}
 
 - (void)loadWBRequest:(ZHUWBRequest *)request
 {
