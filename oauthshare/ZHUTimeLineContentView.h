@@ -20,9 +20,6 @@
 #import "ZHUTableContentView.h"
 //#define USE_ADDSUBVIEW
 @interface ZHUTimeLineContentView : ZHUTableContentView {
-#ifdef USE_ADDSUBVIEW 
-    ZHUImageView *_imgView;
-#endif
     UIImage *_thumbnailImg;
     UIImage *_avatarImg;
     CALayer *_thumbnailLayer;
@@ -38,4 +35,6 @@
 
 @property (assign, nonatomic) BOOL fadeImage;
 @property (assign, nonatomic) BOOL fadeDuration;
+- (void)setThumbnailImg:(UIImage *)image;
+- (void)setAvatarImg:(UIImage *)image;
 @end

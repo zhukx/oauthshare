@@ -9,7 +9,6 @@
 #import "ZHUTableViewCell.h"
 #import "ZHUTimeLineTableViewCell.h"
 
-
 @interface ZHUTableViewCell ()
 - (void)configCell;
 @end

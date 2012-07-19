@@ -18,27 +18,16 @@
     static id _sharedInstance = nil;
     if (!_sharedInstance) {
         _sharedInstance = [[self alloc] init];
-        //[_sharedInstance useCache];
-        [_sharedInstance registerOperationSubclass:[MKNetworkOperation class]];
+        [_sharedInstance useCache];
+        [_sharedInstance registerOperationSubclass:[ZHUWBRequest class]];
     }
     return _sharedInstance;
 }
 
-//-(int) cacheMemoryCost {
-//    return 500;
-//}
-
 - (void)loadWBRequest:(ZHUWBRequest *)request
 {
+    __block id returnInfo = nil;
     [request onCompletion:^(MKNetworkOperation *completedOperation) {
-        if([completedOperation isCachedResponse]) {
-            DLog(@"Data from cache");
-        }
-        else {
-            DLog(@"Data from server");
-        }
-        
-        id returnInfo = nil;
         if (WBREQUEST_TYPE_JSON == request.requestType) {
             returnInfo = [completedOperation responseJSON];
         }
@@ -58,16 +47,29 @@
             returnInfo = [completedOperation responseString];
         }
         
+        if([completedOperation isCachedResponse]) {
+            DLog(@"Data from cache");
+            
+        }
+        else {
+            DLog(@"Data from server");
+            if (returnInfo) {
+                request.finishBlock(returnInfo);
+            }
+            else {
+                NSError *error = [[NSError alloc] initWithDomain:kErrorDomainAuth code:2 userInfo:nil];
+                request.errorBlock(error);
+            }
+        }
+    } onError:^(NSError *error) {
+        [self handleError:error operation:request];
         if (returnInfo) {
             request.finishBlock(returnInfo);
         }
         else {
-            NSError *error = [[NSError alloc] initWithDomain:kErrorDomainAuth code:2 userInfo:nil];
             request.errorBlock(error);
         }
-    } onError:^(NSError *error) {
-        [self handleError:error operation:request];
-        request.errorBlock(error);
+
     }];
     
     [self enqueueOperation:request];

@@ -9,6 +9,7 @@
 #import "ZHUTimeLineTableViewCell.h"
 #import "ZHUSinaStatuses.h"
 #import "ZHUSinaUser.h"
+#import "ZHUWBImageRequestEngine.h"
 
 @implementation ZHUTimeLineTableViewCell
 
@@ -32,6 +33,16 @@
 {
     if (!_cellData || ![_cellData isKindOfClass:[ZHUSinaStatuses class]]) {
         return;
+    }
+}
+
+- (void)refreshContentView:(TLImageType)type withObject:(id)object
+{
+    if (IMAGE_TYPE_THUMBNAIL == type) {
+        [(ZHUTimeLineContentView *)_customContentView setThumbnailImg:object];
+    }
+    else if (IMAGE_TYPE_AVATAR == type) {
+        [(ZHUTimeLineContentView *)_customContentView setAvatarImg:object];        
     }
 }
 

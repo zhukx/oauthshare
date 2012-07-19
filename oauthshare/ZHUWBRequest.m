@@ -12,6 +12,7 @@
 @synthesize finishBlock = _finishBlock;
 @synthesize errorBlock = _errorBlock;
 @synthesize requestType = _requestType;
+@synthesize userInfo = _userInfo;
 
 - (id)initWithURLString:(NSString *)aURLString
                  params:(NSDictionary *)params

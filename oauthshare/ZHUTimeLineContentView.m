@@ -6,9 +6,11 @@
 //  Copyright (c) 2012 tencent. All rights reserved.
 //
 
+#define kAnimationImageFade                 (@"iamgeFade")
 #import "ZHUTimeLineContentView.h"
 #import "ZHUSinaStatuses.h"
 #import "ZHUSinaUser.h"
+#import "ZHUWBImageRequestEngine.h"
 
 @interface ZHUTableContentView ()
 + (CGSize)getContent:(id)object
@@ -137,59 +139,66 @@
     return self;
 }
 
-- (void)configContentView
+- (void)setThumbnailImg:(UIImage *)image
 {
-    if (![_contentData isKindOfClass:[ZHUSinaStatuses class]]) {
-        return;
-    }
-    [CATransaction begin]; 
-    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
-    //[self prepareForReuse];
-    [self calculateRectsForDraw];
-    [CATransaction commit];
-    
+    _thumbnailImg = image;    
+    [self setNeedsDisplayInRect:_thumbnailRect];    
+}
+
+- (void)setAvatarImg:(UIImage *)image
+{
+    _avatarImg = image;    
+    [self setNeedsDisplayInRect:_avatarRect];
+}
+
+- (void)loadImage
+{
     ZHUSinaStatuses *status = _contentData;
     if (status.thumbnail_pic.length) {
-#ifdef USE_ADDSUBVIEW 
-        if (!_imgView) {
-            _imgView = [[ZHUImageView alloc] initWithFrame:self.frame];
-            _imgView.contentMode = UIViewContentModeScaleAspectFit;
-            [self addSubview:_imgView];
-        }
-        _imgView.imageUrl = status.thumbnail_pic;
-#endif
-        _thumbnailOp = [[ZHUWBRequestEngine sharedEngine] imageAtURL:[NSURL URLWithString:status.thumbnail_pic] 
-                                         onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
-                                             _thumbnailImg = fetchedImage;    
-                                             [self setNeedsDisplayInRect:_thumbnailRect];
-                                         }];
+        _thumbnailOp = [[ZHUWBImageRequestEngine sharedEngine] imageAtURL:[NSURL URLWithString:status.thumbnail_pic] 
+                                                             onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
+                                                                 _thumbnailImg = fetchedImage;    
+                                                                 [self setNeedsDisplayInRect:_thumbnailRect];
+                                                             }];
     }
     
     ZHUSinaUser *user = status.user;
     if (user) {
         if (user.avatar_large.length) {
-//            _avatarOp = [[ZHUWBRequestEngine sharedEngine] imageAtURL:[NSURL URLWithString:user.avatar_large] 
-//                                                            onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
-//                                                                if (isInCache) {
-//                                                                    ALog(@"from cache");
-//                                                                }
-//                                                                else {
-//                                                                    ALog(@"from server");
-//                                                                }
-//                                                                _avatarImg = fetchedImage;    
-//                                                                [self setNeedsDisplayInRect:_avatarRect];
-//                                                            }];
+            _avatarOp = [[ZHUWBImageRequestEngine sharedEngine] imageAtURL:[NSURL URLWithString:user.avatar_large] 
+                                                              onCompletion:^(UIImage *fetchedImage, NSURL *url, BOOL isInCache) {
+                                                                  if (isInCache) {
+                                                                      ALog(@"from cache");
+                                                                  }
+                                                                  else {
+                                                                      ALog(@"from server");
+                                                                  }
+                                                                  _avatarImg = fetchedImage;    
+                                                                  [self setNeedsDisplayInRect:_avatarRect];
+                                                              }];
         }
+    }    
+}
+
+- (void)configContentView
+{
+    if (![_contentData isKindOfClass:[ZHUSinaStatuses class]]) {
+        return;
     }
+    _fadeImage = YES;
+    [CATransaction begin]; 
+    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+    [self calculateRectsForDraw];
+    //[self loadImage];
+    [CATransaction commit];
 }
 
 - (void)prepareForReuse
 {
-#ifdef USE_ADDSUBVIEW
-    _imgView.image = nil;
-#endif
+    [CATransaction begin]; 
+    [CATransaction setValue:(id)kCFBooleanTrue forKey:kCATransactionDisableActions];
+    _fadeImage = NO;
     _contentData = nil;
-    
     _thumbnailLayer.contents = nil;
     _thumbnailImg = nil;
     [_thumbnailOp cancel];
@@ -199,6 +208,8 @@
     _avatarImg = nil;
     [_avatarOp cancel];
     _avatarOp = nil;
+    
+    [CATransaction commit]; 
     [self setNeedsDisplay];
 }
 
@@ -213,7 +224,7 @@
         tran.duration = _fadeDuration;
         tran.type = kCATransitionFade;
         layer.contents = (id)image.CGImage;
-        [layer addAnimation:tran forKey:nil];
+        [layer addAnimation:tran forKey:kAnimationImageFade];
         
     }
     else {

@@ -20,9 +20,10 @@ typedef enum {
 
 @interface ZHUWBRequest : MKNetworkOperation
 
-@property (copy, nonatomic) zhuRequestFinishBlock finishBlock;
-@property (copy, nonatomic) zhuRequestErrorBlock errorBlock;
+@property (strong, nonatomic) zhuRequestFinishBlock finishBlock;
+@property (strong, nonatomic) zhuRequestErrorBlock errorBlock;
 @property (assign, nonatomic) ZHUWBRequestType requestType;
+@property (strong, nonatomic) NSDictionary *userInfo;
 
 - (id)initWithURLString:(NSString *)aURLString
                  params:(NSDictionary *)params

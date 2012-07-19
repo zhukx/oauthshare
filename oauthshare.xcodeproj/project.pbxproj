@@ -80,6 +80,7 @@
 		DD9CE89215B0114700D9EF57 /* ZHUImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9CE89115B0114700D9EF57 /* ZHUImageView.m */; };
 		DD9CE8AC15B0490400D9EF57 /* ZHUTableContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9CE8AB15B0490400D9EF57 /* ZHUTableContentView.m */; };
 		DD9CE8AF15B04D4700D9EF57 /* ZHUTimeLineContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9CE8AE15B04D4600D9EF57 /* ZHUTimeLineContentView.m */; };
+		DDFEE4E715B657CF00388AA2 /* ZHUWBImageRequestEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFEE4E615B657CF00388AA2 /* ZHUWBImageRequestEngine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,8 @@
 		DD9CE8AB15B0490400D9EF57 /* ZHUTableContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUTableContentView.m; sourceTree = "<group>"; };
 		DD9CE8AD15B04D4600D9EF57 /* ZHUTimeLineContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUTimeLineContentView.h; sourceTree = "<group>"; };
 		DD9CE8AE15B04D4600D9EF57 /* ZHUTimeLineContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUTimeLineContentView.m; sourceTree = "<group>"; };
+		DDFEE4E515B657CF00388AA2 /* ZHUWBImageRequestEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHUWBImageRequestEngine.h; sourceTree = "<group>"; };
+		DDFEE4E615B657CF00388AA2 /* ZHUWBImageRequestEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHUWBImageRequestEngine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +250,8 @@
 				1EA12F4E15AE82DC0096EF4E /* basic */,
 				1EA12F5115AEA3CF0096EF4E /* ZHUSinaWBRequestEngine.h */,
 				1EA12F5215AEA3CF0096EF4E /* ZHUSinaWBRequestEngine.m */,
+				DDFEE4E515B657CF00388AA2 /* ZHUWBImageRequestEngine.h */,
+				DDFEE4E615B657CF00388AA2 /* ZHUWBImageRequestEngine.m */,
 			);
 			name = network;
 			sourceTree = "<group>";
@@ -740,6 +745,7 @@
 				DD9CE8AF15B04D4700D9EF57 /* ZHUTimeLineContentView.m in Sources */,
 				DD94A47515B294A500E23F96 /* ZHUSinaStatuses.m in Sources */,
 				DD7844AE15B51727006497EA /* ZHUResponse.m in Sources */,
+				DDFEE4E715B657CF00388AA2 /* ZHUWBImageRequestEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

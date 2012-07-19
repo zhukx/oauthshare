@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 tencent. All rights reserved.
 //
 
-static char SELECTIMG_KEY;
+static const char SELECTIMG_KEY;
 #import "ZHUAdditions.h"
 
 @implementation UITabBarItem (additionalImage)
