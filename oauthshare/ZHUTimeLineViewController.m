@@ -5,7 +5,10 @@
 //  Created by zhukuanxi@gmail.com on 7/10/12.
 //  Copyright (c) 2012 tencent. All rights reserved.
 //
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER
 static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
+#endif
+
 #import "ZHUTimeLineViewController.h"
 #import "ZHUSinaWeibomgr.h"
 #import "ZHUSinaWBRequestEngine.h"
@@ -17,9 +20,11 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
 - (void)hideTab:(id)sender;
 - (void)parseReturnInfo:(id)returnInfo;
 - (void)loadRequest;
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER
 - (void)cancelImageLoad;
 - (NSString *)generateKeyWith:(NSIndexPath *)index type:(int)type;
 - (BOOL)checkImageRequest:(NSIndexPath *)indexPath type:(TLImageType)type image:(UIImage **)image;
+#endif
 @end
 
 @implementation ZHUTimeLineViewController
@@ -32,7 +37,9 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
         self.title = NSLocalizedString(@"Home", @"Home");
         _viewSizeType = VIEW_SIZE_WITH_TABBAR_NAVIGATIONBAR;
         _cellClass = [ZHUTimeLineTableViewCell class];
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER
         _imageLoadDic = [[NSMutableDictionary alloc] init];
+#endif
         [[NSNotificationCenter defaultCenter] addObserverForName:kNofityLoginSucess 
                                                           object:nil
                                                            queue:[NSOperationQueue mainQueue]
@@ -63,7 +70,9 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER
     [self cancelImageLoad];
+#endif
 }
 
 - (void)viewDidAppear:(BOOL)animated 
@@ -137,6 +146,7 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
                                                 }];
 }
 
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER
 - (void)cancelImageLoad 
 {
     [[_imageLoadDic allValues] makeObjectsPerformSelector:@selector(cancel)];
@@ -159,40 +169,6 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
     [_imageLoadDic setObject:operation forKey:key];
 }
 
-- (void)parseReturnInfo:(id)returnInfo
-{
-    if (![returnInfo isKindOfClass:[NSDictionary class]]) {
-        return;
-    }
-    
-    NSArray *statusArr = [returnInfo objectForKey:[ZHUSinaStatuses dataKey]];
-
-    [statusArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        if (![obj isKindOfClass:[NSDictionary class]]) {
-            *stop = YES;
-        }
-        ZHUSinaStatuses *status = [[ZHUSinaStatuses alloc] initWithDic:obj];
-
-        [self.dataArr safeAddObject:status];
-        if (!_imageQueue) {
-            _imageQueue = dispatch_queue_create(imageDownloadQueue, nil);
-        }
-        
-        NSIndexPath *curIndex = [NSIndexPath indexPathForRow:self.dataArr.count - 1 inSection:0];
-        dispatch_async(_imageQueue, ^{
-            if (status.thumbnail_pic.length) {
-                [self loadImage:status.thumbnail_pic atIndexPath:curIndex withType:IMAGE_TYPE_THUMBNAIL];
-            }
-            
-            ZHUSinaUser *user = status.user;
-            if (user.avatar_large.length) {
-                [self loadImage:user.avatar_large atIndexPath:curIndex withType:IMAGE_TYPE_AVATAR];
-            }
-        });
-    }];
-    [self.tableView reloadData];
-}
-
 - (NSString *)generateKeyWith:(NSIndexPath *)indexPath type:(int)type
 {
     return [NSString stringWithFormat:@"%d-%d-%d", indexPath.section, indexPath.row, type];
@@ -211,6 +187,44 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
     }
     return bResult;
 }
+#endif
+
+- (void)parseReturnInfo:(id)returnInfo
+{
+    if (![returnInfo isKindOfClass:[NSDictionary class]]) {
+        return;
+    }
+    
+    NSArray *statusArr = [returnInfo objectForKey:[ZHUSinaStatuses dataKey]];
+
+    [statusArr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (![obj isKindOfClass:[NSDictionary class]]) {
+            *stop = YES;
+        }
+        ZHUSinaStatuses *status = [[ZHUSinaStatuses alloc] initWithDic:obj];
+
+        [self.dataArr safeAddObject:status];
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER        
+        if (!_imageQueue) {
+            _imageQueue = dispatch_queue_create(imageDownloadQueue, nil);
+        }
+        
+        NSIndexPath *curIndex = [NSIndexPath indexPathForRow:self.dataArr.count - 1 inSection:0];
+        dispatch_async(_imageQueue, ^{
+            if (status.thumbnail_pic.length) {
+                [self loadImage:status.thumbnail_pic atIndexPath:curIndex withType:IMAGE_TYPE_THUMBNAIL];
+            }
+            
+            ZHUSinaUser *user = status.user;
+            if (user.avatar_large.length) {
+                [self loadImage:user.avatar_large atIndexPath:curIndex withType:IMAGE_TYPE_AVATAR];
+            }
+        });
+#endif
+    }];
+    [self.tableView reloadData];
+}
+
 
 #pragma mark -
 #pragma mark UITableViewDataSource
@@ -224,7 +238,7 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
     
     id content = [_dataArr safeObjectAtIndex:indexPath.row];
     [cell setCellData:content];
-
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER        
     ZHUSinaStatuses *status = content;
     if (status.thumbnail_pic.length) {
         UIImage *image = nil;
@@ -256,7 +270,7 @@ static const char *imageDownloadQueue = "UIScrollViewPullToRefreshView";
             [(ZHUTimeLineTableViewCell *)cell refreshContentView:IMAGE_TYPE_AVATAR withObject:image];
         }
     }
-    
+#endif
     return cell;
 }
 @end

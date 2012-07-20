@@ -12,8 +12,10 @@
 
 @interface ZHUTableViewCell : UITableViewCell {
     id _cellData;
+#ifdef CUSTOM_DRAW_CELL
     ZHUTableContentView *_customContentView;
     Class _customContentViewClass;
+#endif
 }
 
 @property (strong, nonatomic) id cellData;

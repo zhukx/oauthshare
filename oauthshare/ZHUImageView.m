@@ -48,6 +48,7 @@ static char IMAGEURL_KEY;
             self.image = nil;
         }
         [super setImageUrl:imageUrl];
+        //[self performSelectorInBackground:@selector(loadRequest) withObject:nil];
         [self loadRequest];
     }
 }

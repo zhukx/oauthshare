@@ -7,7 +7,7 @@
 //
 
 #define kTableViewFirstPageNum                  (1)
-#define kTableViewCountPerPage                  (50)
+#define kTableViewCountPerPage                  (20)
 #import "ZHUTableViewController.h"
 #import "ZHUTableViewCell.h"
 

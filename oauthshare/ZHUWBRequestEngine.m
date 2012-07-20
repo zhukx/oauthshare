@@ -49,7 +49,9 @@
         
         if([completedOperation isCachedResponse]) {
             DLog(@"Data from cache");
-            
+            if (returnInfo && WBREQUEST_TYPE_IMAGE == request.requestType) {
+                request.finishBlock(returnInfo);
+            }
         }
         else {
             DLog(@"Data from server");

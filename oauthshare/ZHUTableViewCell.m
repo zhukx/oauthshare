@@ -26,6 +26,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Initialization code
+#ifdef CUSTOM_DRAW_CELL
         if ([self isKindOfClass:[ZHUTimeLineTableViewCell class]]) {
             _customContentViewClass = [ZHUTimeLineContentView class];
         }
@@ -38,6 +39,7 @@
         _customContentView = [[_customContentViewClass alloc] initWithFrame:self.contentView.bounds];
         _customContentView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         [self.contentView addSubview:_customContentView];
+#endif
     }
     return self;
 }
@@ -47,15 +49,18 @@
     if (cellData && cellData != _cellData) {
         _cellData = cellData;
         [self configCell];
+#ifdef CUSTOM_DRAW_CELL
         _customContentView.contentData = _cellData;
+#endif
     }
 }
 
 - (void)prepareForReuse
 {
     [super prepareForReuse];
-    _cellData = nil;
+#ifdef CUSTOM_DRAW_CELL
     [_customContentView prepareForReuse];
+#endif
 }
 
 - (void)configCell

@@ -12,8 +12,10 @@
 
 @interface ZHUTimeLineViewController : ZHUTableViewController {
     ZHUWBRequest *_timeLineOp;
+#ifdef LOAD_CELL_IMAGE_IN_CONTROLLER
     NSMutableDictionary *_imageLoadDic;
     dispatch_queue_t _imageQueue;
+#endif
 }
 
 @end
